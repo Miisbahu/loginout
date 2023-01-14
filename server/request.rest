@@ -1,0 +1,17 @@
+GET http://localhost:3000/register
+
+
+###
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "firstName": "misbahu",
+    "secondName": "abubakar",
+    "email": "miibahu@gmail.com",
+    "password": "password",
+    "dateOfBirth": "28/2/2003",
+    "phoneNumber": "08033992832",
+    "state": "sokoto"
+  }
