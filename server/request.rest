@@ -7,10 +7,10 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "firstName": "misbahu",
-    "secondName": "abubakar",
-    "email": "miibahu@gmail.com",
-    "password": "password",
+    "firstName": "asmau",
+    "secondName": "bello dikko",
+    "email": "asmau@gmail.com",
+    "password": "anotherOne",
     "dateOfBirth": "28/2/2003",
     "phoneNumber": "08033992832",
     "state": "sokoto"

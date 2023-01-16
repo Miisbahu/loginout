@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const registerUrl = "http://localhost/3000/register";
+const registerUrl = "http://localhost:3000/register";
 
 const Register = () => {
   const [input, setInput] = useState({
@@ -19,7 +19,7 @@ const Register = () => {
     try {
       await axios.post(registerUrl, input);
       console.log(input);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
     }
 
@@ -53,6 +53,7 @@ const Register = () => {
               onChange={(e) =>
                 setInput({ ...input, firstName: e.target.value })
               }
+              required
             />
           </div>
           <div className="flex flex-col gap-2 w-3/4 mx-auto p-3 text-teal-800">

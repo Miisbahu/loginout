@@ -26,34 +26,43 @@ const Login = () => {
 
   return (
     <>
-      <form>
-        <div className="bg-gray-400 p-3 w-3/4 mx-auto">
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            value={input.email}
-            placeholder="Email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="bg-gray-400 p-3 w-3/4 mx-auto">
-          <label htmlFor="email">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={input.password}
-            placeholder="Password"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="bg-gray-400 p-3 w-3/4 mx-auto">
-          <input
-            type="button"
-            name="submit"
-            value="Submit"
-            onClick={handleSubmit}
-          />
+      <form className="mt-20">
+        <div className="flex flex-col w-11/12 md:w-2/4 p-5 shadow-sm shadow-gray-500 mx-auto">
+          <div className="p-3">
+            <label htmlFor="email" className="text-teal-500">
+              Email
+            </label>
+            <input
+              className="border border-gray-300 p-3 rounded-md outline-none focus:bg-teal-50 w-full"
+              type="text"
+              name="email"
+              value={input.email}
+              placeholder="Email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="p-3">
+            <label htmlFor="email" className="text-teal-500">
+              Password
+            </label>
+            <input
+              className="border border-gray-300 p-3 rounded-md outline-none focus:bg-teal-50 w-full"
+              type="password"
+              name="password"
+              value={input.password}
+              placeholder="Password"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex p-3 justify-center w-full">
+            <button
+              type="submit"
+              className="bg-teal-600 w-2/4 p-3 rounded-sm text-teal-200"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </>

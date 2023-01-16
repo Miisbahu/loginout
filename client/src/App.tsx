@@ -4,7 +4,7 @@ import Pages from "./routes/routes";
 function App() {
   return (
     <BrowserRouter>
-      <Pages />;
+      <Pages />
     </BrowserRouter>
   );
 }
