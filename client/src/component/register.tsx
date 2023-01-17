@@ -1,9 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const registerUrl = "http://localhost:3000/register";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [input, setInput] = useState({
     firstName: "",
     secondName: "",
@@ -18,7 +21,6 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post(registerUrl, input);
-      console.log(input);
     } catch (error: any) {
       console.log(error);
     }
@@ -134,10 +136,20 @@ const Register = () => {
               value="submit"
               className="bg-teal-600 w-3/4 mx-auto shadow-sm shadow-gray-300 hover:bg-teal-400 text-white p-4 border-none outline-none"
             >
-              Sumbit
+              Register
             </button>
           </div>
         </form>
+
+        <div className="flex justify-center items-center gap-3 pb-8">
+          <p className="text-teal-900">Already a user? : </p>
+          <button
+            className="text-xl text-teal-900 hover:scale-125 transition-all duration-700"
+            onClick={() => navigate("/login")}
+          >
+            Log in
+          </button>
+        </div>
       </div>
     </>
   );

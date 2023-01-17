@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const loginUrl = "http://localhost:3000/login";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -26,8 +28,8 @@ const Login = () => {
 
   return (
     <>
-      <form className="mt-20">
-        <div className="flex flex-col w-11/12 md:w-2/4 p-5 shadow-sm shadow-gray-500 mx-auto">
+      <div className="flex flex-col w-11/12 md:w-2/4 p-5 mt-20 shadow-sm shadow-gray-500 mx-auto">
+        <form className="">
           <div className="p-3">
             <label htmlFor="email" className="text-teal-500">
               Email
@@ -60,11 +62,21 @@ const Login = () => {
               className="bg-teal-600 w-2/4 p-3 rounded-sm text-teal-200"
               onClick={handleSubmit}
             >
-              Submit
+              Log In
             </button>
           </div>
+        </form>
+
+        <div className="flex gap-3 justify-center items-center">
+          <p className="text-teal-800">New User? :</p>
+          <button
+            className="text-xl text-teal-500 hover:scale-125 transition-all duration-500"
+            onClick={() => navigate("/register")}
+          >
+            Register
+          </button>
         </div>
-      </form>
+      </div>
     </>
   );
 };
